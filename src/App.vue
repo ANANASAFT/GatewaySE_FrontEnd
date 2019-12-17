@@ -1,7 +1,7 @@
 <template>
 	<div id = "app">
 		<Header/>
-		<Breadcrumb/>
+		<Breadcrumb />
 		<b-container class="bv-example-row" fluid>
 			<b-row align-h="start">
 				<b-col cols="2">
