@@ -1,12 +1,10 @@
 <template>
-    <b-nav-item
-        :class="{'shadow-sm rounded':true,'bg-secondary':selectedBrands.indexOf(brand.id)!=-1}"
+    <Button style="margin: 2px;width: 90px"
+        :type="curType"
         @click="brandClicked(brand.id)"
     >
-        <span>
-            {{brand.name}}
-        </span>
-    </b-nav-item>
+        {{brand.name}}
+    </Button>
 </template>
 
 <script>
@@ -14,6 +12,7 @@
         name: "BrandSquare",
         data(){
             return{
+                curType:"default"
             }
         },
         methods:{
@@ -21,10 +20,12 @@
                 var index = this.selectedBrands.indexOf(brandId);
                 if(index==-1){
                     this.selectedBrands.push(brandId);
+                    this.curType = "primary";
                 }else{
                     this.selectedBrands.splice(index,1);
+                    this.curType = "default";
                 }
-                // console.log(this.selectedBrands);
+                console.log(this.selectedBrands);
             }
         },
         props:{

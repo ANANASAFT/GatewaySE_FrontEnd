@@ -1,29 +1,48 @@
 <template>
-	<b-container class= "bv-example-row" fluid>
-		<b-row >
-			<b-col cols="4" >
+	<div>
+		<Row :gutter="8" class="row">
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-			<b-col cols="4">
+			</i-col>
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-			<b-col cols="4">
+			</i-col>
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-		</b-row>
-		<br/>
-		<b-row  align-h="left">
-			<b-col cols="4" >
+			</i-col>
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-			<b-col cols="4">
+			</i-col>
+		</Row>
+		<Row :gutter="8" class="row">
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-			<b-col cols="4">
+			</i-col>
+			<i-col span="6">
 				<gateway-card/>
-			</b-col>
-		</b-row>
-	</b-container>
+			</i-col>
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+		</Row>
+		<Row :gutter="8" class="row">
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+			<i-col span="6">
+				<gateway-card/>
+			</i-col>
+		</Row>
+	</div>
 </template>
 
 
@@ -36,5 +55,7 @@
 </script>
 
 <style scoped>
-
+.row{
+	margin-bottom: 10px;
+}
 </style>

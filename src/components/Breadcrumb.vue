@@ -1,28 +1,13 @@
 <template>
-	<b-breadcrumb :items="items" class="shadow-sm bg-white rounded" style="background: white"></b-breadcrumb>
+	<Breadcrumb style="margin: 20px; font-size: 16px">
+		<BreadcrumbItem>首页</BreadcrumbItem>
+		<BreadcrumbItem>产品</BreadcrumbItem>
+		<BreadcrumbItem>网关</BreadcrumbItem>
+	</Breadcrumb>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                items: [
-                    {
-                        text: 'Admin',
-                        href: '#'
-                    },
-                    {
-                        text: 'Manage',
-                        href: '#'
-                    },
-                    {
-                        text: 'Library',
-                        active: true
-                    }
-                ]
-            }
-        }
-    }
+
 </script>
 
 <style scoped>
