@@ -42,6 +42,7 @@
 				<gateway-card/>
 			</i-col>
 		</Row>
+		<Page align="center" page-size="12" :total="50" show-total />
 	</div>
 </template>
 

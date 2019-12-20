@@ -81,9 +81,9 @@
                 selectedCategory:null,
                 selectedBrands: [],
                 brands:[
-                  {id:1, name:"Nexcom"},
+                  {id:1, name:"Anybus"},
                   {id:2, name:"万创科技"},
-                  {id:3, name:"锐捷科技"},
+                  {id:3, name:"纵横智控"},
                   {id:4, name:"繁易科技"},
 ]
           }
