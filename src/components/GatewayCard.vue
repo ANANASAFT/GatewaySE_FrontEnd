@@ -1,27 +1,31 @@
 <template>
-	<Card class="product" width="auto">
-		<div style="text-align:center">
-			<img src="../assets/gateway.png" style="width: auto;height: 150px">
-			<p class="title">工业LTE路由器</p>
-			<p>稳定、易用、安全的4G工业路由器</p>
-			<p>5网口、VPN、WiFi、双SIM卡</p>
-		</div>
-	</Card>
+    <Card class="product" width="auto" >
+        <div style="text-align:center">
+            <img src="../assets/gateway.png" style="width: auto;height: 150px">
+            <p class="title">{{this.product.model}}</p>
+            <h3>{{this.product.brand}}</h3>
+            <p>{{this.product.industrialGrade}}</p>
+            <p>{{this.product.description.slice(0,70)}}...</p>
+        </div>
+    </Card>
 </template>
 
 <script>
     export default {
-        name: "GatewayCard"
+        name: "GatewayCard",
+        props:{
+            product:Object
+        }
     }
 </script>
 
 <style scoped>
-	.product{
-		box-shadow:2px 2px 2px darkgrey;
-		max-height: 400px;
-	}
-	.title{
-		color: dodgerblue;
-		font-size: 20px;
-	}
+    .product {
+        box-shadow: 2px 2px 2px darkgrey;
+        height: 350px;
+    }
+    .title{
+        color: dodgerblue;
+        font-size: 20px;
+    }
 </style>
