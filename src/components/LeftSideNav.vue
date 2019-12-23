@@ -1,41 +1,5 @@
+<!--产品浏览页左侧筛选栏-->
 <template>
-<!--    <div class="nav flex-column nav-pills nav-tabs" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
-<!--        <b-nav-item-->
-<!--                class="shadow-sm border border-light rounded nav-item"-->
-<!--                :active = "selectedCategory==1"-->
-<!--                @click="selectCategory(1)"-->
-<!--        >-->
-<!--            品牌-->
-<!--        </b-nav-item>-->
-<!--        <div-->
-<!--            v-if = "selectedCategory==1"-->
-<!--            ref="brandSquares"-->
-<!--        >-->
-<!--            <b-nav fill >-->
-<!--                <BrandSquare-->
-<!--                    class="brands"-->
-<!--                    v-for="brand in brands"-->
-<!--                    :key="brand.id"-->
-<!--                    :brand="brand"-->
-<!--                    :selected-brands="selectedBrands"-->
-<!--                />-->
-<!--            </b-nav>-->
-<!--        </div >-->
-<!--        <b-nav-item-->
-<!--                class="shadow-sm border border-light rounded nav-item"-->
-<!--                :active = "selectedCategory==2"-->
-<!--                @click="selectCategory(2)"-->
-<!--        >-->
-<!--            适用场景-->
-<!--        </b-nav-item>-->
-<!--        <b-nav-item-->
-<!--                class="shadow-sm border border-light rounded nav-item"-->
-<!--                :active = "selectedCategory==3"-->
-<!--                @click="selectCategory(3)"-->
-<!--        >-->
-<!--            协议-->
-<!--        </b-nav-item>-->
-<!--    </div>-->
     <Menu theme="light" width="auto" :active-name="2" :open-names="['1']">
         <Submenu name="1">
             <template slot="title">
@@ -57,7 +21,7 @@
         <Submenu name="2">
             <template slot="title">
                 <Icon type="ios-navigate"></Icon>
-                Item 2
+                使用环境
             </template>
             <MenuItem name="2-1">Option 1</MenuItem>
             <MenuItem name="2-2">Option 2</MenuItem>
@@ -65,7 +29,15 @@
         <Submenu name="3">
             <template slot="title">
                 <Icon type="ios-analytics"></Icon>
-                Item 3
+                协议
+            </template>
+            <MenuItem name="3-1">Option 1</MenuItem>
+            <MenuItem name="3-2">Option 2</MenuItem>
+        </Submenu>
+        <Submenu name="4">
+            <template slot="title">
+                <Icon type="ios-analytics"></Icon>
+                硬件
             </template>
             <MenuItem name="3-1">Option 1</MenuItem>
             <MenuItem name="3-2">Option 2</MenuItem>

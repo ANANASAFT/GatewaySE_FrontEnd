@@ -1,3 +1,4 @@
+<!--产品品牌选择按钮组件-->
 <template>
     <Button style="margin: 2px;width: 90px"
         :type="curType"

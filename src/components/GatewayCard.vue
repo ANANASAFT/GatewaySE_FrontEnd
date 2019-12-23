@@ -1,3 +1,4 @@
+<!--网关展示卡片组件-->
 <template>
     <Card v-if="product!=null" class="product" width="auto" >
         <div style="text-align:center">

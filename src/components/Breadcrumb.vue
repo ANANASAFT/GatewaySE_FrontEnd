@@ -1,3 +1,4 @@
+<!--面包屑导航组件-->
 <template>
 	<Breadcrumb style="margin: 20px; font-size: 16px">
 		<BreadcrumbItem>首页</BreadcrumbItem>

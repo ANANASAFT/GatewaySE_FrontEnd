@@ -1,3 +1,4 @@
+<!--网关展示区块主题组件-->
 <template>
     <div v-if="products.length>0">
         <Row v-for="i in 3"
