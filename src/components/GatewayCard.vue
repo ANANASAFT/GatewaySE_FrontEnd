@@ -1,5 +1,5 @@
 <template>
-    <Card class="product" width="auto" >
+    <Card v-if="product!=null" class="product" width="auto" >
         <div style="text-align:center">
             <img src="../assets/gateway.png" style="width: auto;height: 150px">
             <p class="title">{{this.product.model}}</p>
@@ -13,8 +13,13 @@
 <script>
     export default {
         name: "GatewayCard",
-        props:{
-            product:Object
+        props: {
+            product: {
+                type: Object,
+                default() {
+                    return null;
+                }
+            }
         }
     }
 </script>

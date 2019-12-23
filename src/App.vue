@@ -9,10 +9,13 @@
                 <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <left-side-nav/>
+                            <left-side-nav
+                                    :getAllProducts="getAllProducts"
+                                    :clearProducts="clearProducts"/>
                         </Sider>
                         <Content :style="{padding: '24px', minHeight: '280px',maxHeight:'800px', background: '#fff'}">
-                            <gateway-thumbnail-display :products = 'products'/>
+                            <gateway-thumbnail-display :products ="products" :currentPage = "currentPage"/>
+                            <Page @on-change="getPage" :page-size="pageSize" align="center" :total="this.products.length" show-total />
                         </Content>
                     </Layout>
                 </Content>
@@ -40,24 +43,33 @@
         },
         data(){
             return {
-                products: []
+                pageSize:12,
+                products: [],
+                currentPage: 1
             }
         },
         methods:{
+            clearProducts(){
+                this.products = []
+            },
             getAllProducts(){
                 fetch('http://toon.vipgz2.idcfengye.com/api/product/all',{method:'get'})
                     .then((response)=>{
                         // console.log(response.json());
                         return response.json();
                     })
-                    .then((data)=>{
+                    .then((jsonData)=>{
                         // console.log(data);
-                        this.products = data.data
+                        this.products = jsonData.data
                     })
+            },
+            getPage(page){
+                this.currentPage = page;
+                // console.log(this.currentPage)
             }
         },
         mounted() {
-            this.getAllProducts()
+            this.getAllProducts();
         }
     }
 </script>

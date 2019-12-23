@@ -6,10 +6,9 @@
             <i-col v-for="j in 4"
                    :key = j
                    span="6">
-                <gateway-card :product = 'products[(i-1)*4+j-1]'/>
+                <gateway-card :product = "(12*(currentPage-1)+(i-1)*4+j-1) < products.length ? products[12*(currentPage-1)+(i-1)*4+j-1] : null"/>
             </i-col>
         </Row>
-        <Page :on-change="getPage" align="center" :total="50" show-total />
     </div>
 </template>
 
@@ -21,16 +20,27 @@
         components: {GatewayCard},
         data(){
             return{
-                currentPage:2
+                // currentPage:Number
             }
         },
         methods:{
-          getPage(page){
-              alert(page);
-          }
+          // getPage(page){
+          //     this.currentPage = page;
+          // }
         },
         props:{
-            products:Array
+            products:{
+                type:Array,
+                default(){
+                    return [];
+                }
+            },
+            currentPage:{
+                type:Number,
+                default(){
+                    return 1;
+                }
+            }
         }
     }
 </script>

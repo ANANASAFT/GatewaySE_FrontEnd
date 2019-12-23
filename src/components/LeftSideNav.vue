@@ -49,6 +49,7 @@
                     <brand-square
                         :brand="brand"
                         :selected-brands="selectedBrands"
+                        @on-change="selectedBrandsChanged"
                     />
                 </i-col>
             </Row>
@@ -78,9 +79,8 @@
         name: "LeftSideNav",
         data:function(){
             return{
-                selectedCategory:null,
-                selectedBrands: [],
-                brands:[
+                selectedBrands: [], //储存选择的品牌对象
+                brands:[            //展示的品牌按钮
                   {id:1, name:"Anybus"},
                   {id:2, name:"万创科技"},
                   {id:3, name:"纵横智控"},
@@ -88,10 +88,21 @@
 ]
           }
         },
+        props:[
+            'getAllProducts',
+            'clearProducts'
+        ],  //从app传来的两个数据检索方法
         components:{
             BrandSquare,
         },
         methods:{
+            selectedBrandsChanged(){        //当子组件按钮被点击时回调该方法
+                if(this.selectedBrands.length==0){
+                    this.getAllProducts()
+                }else{
+                    this.clearProducts()
+                }
+            }
         }
     }
 </script>
